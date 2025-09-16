@@ -1,0 +1,57 @@
+.Student-Login {
+	.remember-me {
+		transition: var(--trans-3);
+		&:hover {
+			color: var(--black-color);
+		}
+	}
+	.email-field,
+	.password-field,
+	.id-field {
+		&::placeholder {
+			color: var(--dark-gray-color);
+			padding-left: 30px;
+			transition: var(--trans-3);
+		}
+		&:focus,
+		&.active {
+			&::placeholder {
+				padding-left: 0;
+				transition: var(--trans-3);
+			}
+		}
+		&:focus + i,
+		&.active + i {
+			display: none;
+			transition: var(--trans-3);
+		}
+	}
+
+	/* swap animations for login field */
+	@keyframes swapInLeft {
+		0% {
+			opacity: 0;
+			transform: translateX(-12px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	@keyframes swapInRight {
+		0% {
+			opacity: 0;
+			transform: translateX(12px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	.swap-in-left {
+		animation: swapInLeft 220ms ease;
+	}
+	.swap-in-right {
+		animation: swapInRight 220ms ease;
+	}
+}

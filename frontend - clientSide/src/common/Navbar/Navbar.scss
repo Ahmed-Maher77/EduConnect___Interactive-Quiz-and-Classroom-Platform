@@ -1,0 +1,291 @@
+// ====================== Navbar Styles ======================
+.Navbar {
+	position: fixed;
+	background-color: var(--fixed-white-color);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	max-height: 70px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.3s ease;
+
+	&.active {
+		background-color: var(--white-color);
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.container {
+		max-height: 70px;
+	}
+}
+
+// ====================== Desktop Navigation ======================
+.Navbar-List {
+	a.active {
+		color: var(--main-blue-color);
+		font-weight: 600;
+	}
+
+	a {
+		color: var(--dark-gray-color);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: var(--main-blue-color);
+		}
+	}
+}
+
+.Navbar-Buttons {
+	.btn-main-blue,
+	.btn-main-gray {
+		font-size: 0.875rem;
+		padding: 0.5rem 1rem;
+	}
+}
+
+// ====================== Theme Toggle Button ======================
+.theme-toggle-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	flex-shrink: 0;
+	background: transparent;
+	border: 2px solid var(--light-gray-color);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	color: var(--dark-gray-color);
+	font-size: 1.1rem;
+
+	&:hover {
+		background-color: var(--main-blue-color);
+		border-color: var(--main-blue-color);
+		color: var(--fixed-white-color);
+		box-shadow: 0 4px 12px rgba(65, 130, 236, 0.15);
+		rotate: 360deg;
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&:focus {
+		outline: none;
+		border-color: var(--main-blue-color);
+		box-shadow: 0 0 0 3px rgba(65, 130, 236, 0.1);
+	}
+
+	i {
+		transition: transform 0.3s ease;
+	}
+
+	&:hover i {
+		transform: rotate(180deg);
+	}
+}
+
+// ====================== Mobile Menu Button ======================
+.mobile-menu-btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 2rem;
+	height: 2rem;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	z-index: 1001;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.hamburger-line {
+	width: 2rem;
+	height: 0.25rem;
+	background-color: var(--dark-gray-color);
+	border-radius: 10px;
+	transition: all 0.3s linear;
+	position: relative;
+	transform-origin: 1px;
+}
+
+// Hamburger animation states
+.mobile-menu-btn.open .hamburger-line {
+	&:first-child {
+		transform: rotate(45deg);
+	}
+
+	&:nth-child(2) {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+
+	&:nth-child(3) {
+		transform: rotate(-45deg);
+	}
+}
+
+// ====================== Mobile Navigation Menu ======================
+.mobile-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: var(--white-color);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transform: translateY(-100%);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	z-index: 999;
+
+	&.open {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.mobile-nav-list {
+	list-style: none;
+	padding: 1rem 0;
+	margin: 0;
+
+	.mobile-nav-item {
+		border-bottom: 1px solid var(--light-gray-color);
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		a {
+			display: block;
+			padding: 1rem 2rem;
+			color: var(--dark-gray-color);
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+
+			&:hover {
+				background-color: var(--light-gray-color);
+				color: var(--main-blue-color);
+			}
+
+			&.active {
+				color: var(--main-blue-color);
+				font-weight: 600;
+				background-color: rgba(65, 130, 236, 0.1);
+			}
+		}
+	}
+}
+
+.mobile-nav-buttons {
+	padding: 1rem 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+
+	.mobile-language-switcher {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.75rem;
+		width: 100%;
+		.language-switcher-trigger {
+			padding: 0.5rem 0.75rem;
+			height: 40px;
+		}
+
+		.mobile-label {
+			font-size: 0.875rem;
+			font-weight: 600;
+			color: var(--dark-gray-color);
+		}
+	}
+
+	.mobile-btn {
+		width: 100%;
+		padding: 0.75rem 1rem;
+		font-size: 0.875rem;
+		text-align: center;
+	}
+}
+
+// ====================== Responsive Design ======================
+@media (max-width: 767px) {
+	.Navbar {
+		.container {
+			padding-inline: 1rem;
+		}
+	}
+}
+
+@media (min-width: 991px) {
+	.mobile-menu {
+		display: none;
+	}
+
+	.mobile-menu-btn {
+		display: none;
+	}
+}
+
+// ====================== Tablet Adjustments ======================
+@media (min-width: 768px) and (max-width: 990px) {
+	.Navbar-Buttons {
+		.btn-main-blue,
+		.btn-main-gray {
+			font-size: 0.8rem;
+			padding: 0.4rem 0.8rem;
+		}
+	}
+}
+
+// ====================== Large Screen Optimizations ======================
+@media (min-width: 1024px) {
+	.Navbar-List {
+		gap: 2rem;
+	}
+}
+
+// ====================== Mobile Switchers ======================
+.mobile-switchers {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	position: absolute;
+	top: 50%;
+	right: 3.7rem;
+	transform: translateY(-50%);
+
+	@media (min-width: 500px) {
+		right: 4rem;
+	}
+	@media (min-width: 600px) {
+		right: 4.5rem;
+	}
+	@media (min-width: 700px) {
+		right: 5rem;
+	}
+	@media (min-width: 800px) {
+		right: 5.5rem;
+	}
+
+	// Hide on desktop and mobile (380px)
+	@media (max-width: 380px) {
+		display: none;
+	}
+	@media (min-width: 1024px) {
+		display: none;
+	}
+}

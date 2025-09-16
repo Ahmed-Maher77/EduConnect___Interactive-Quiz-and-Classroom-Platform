@@ -1,0 +1,212 @@
+.swiper {
+	width: 100%;
+	height: 120%;
+	min-height: 500px;
+	max-width: 100%;
+	// If Autoplay progress is activated
+	position: relative;
+}
+.autoplay-progress {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	z-index: 10;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	color: var(--swiper-theme-color);
+}
+.autoplay-progress svg {
+	--progress: 0;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	stroke-width: 4px;
+	stroke: var(--swiper-theme-color);
+	fill: none;
+	stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+	stroke-dasharray: 125.6;
+	transform: rotate(-90deg);
+}
+
+// ====================== Custom Navigation Controls ======================
+.custom-navigation {
+	position: absolute;
+	bottom: 4px;
+	right: 50%;
+	transform: translateX(50%);
+	display: flex;
+	gap: 1rem;
+	z-index: 10;
+}
+
+.custom-nav-btn {
+	width: 45px;
+	height: 45px;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--main-blue-color);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(135deg, var(--main-blue-color), #4ecdc4);
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	i {
+		font-size: 1rem;
+		color: var(--white-color);
+		transition: all 0.3s ease;
+		position: relative;
+		z-index: 2;
+	}
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+		&::before {
+			opacity: 1;
+		}
+
+		i {
+			color: var(--white-color);
+			transform: scale(1.1);
+		}
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&.swiper-button-disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+		transform: none;
+
+		&:hover {
+			transform: none;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+			&::before {
+				opacity: 0;
+			}
+
+			i {
+				color: var(--dark-gray-color);
+				transform: none;
+			}
+		}
+	}
+}
+
+// ====================== Custom Pagination ======================
+.swiper-pagination {
+	position: absolute;
+	bottom: 80px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+}
+
+.swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: 2px solid var(--white-color);
+	opacity: 1;
+	transition: all 0.3s ease;
+
+	&.swiper-pagination-bullet-active {
+		background-color: var(--main-blue-color);
+		border-color: var(--main-blue-color);
+		transform: scale(1.2);
+	}
+}
+
+// ====================== Responsive Design ======================
+@media (max-width: 768px) {
+	.custom-navigation {
+		bottom: 15px;
+		gap: 0.75rem;
+	}
+
+	.custom-nav-btn {
+		width: 40px;
+		height: 40px;
+
+		i {
+			font-size: 0.9rem;
+		}
+	}
+
+	.swiper-pagination {
+		bottom: 70px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.custom-navigation {
+		bottom: 10px;
+		gap: 0.5rem;
+	}
+
+	.custom-nav-btn {
+		width: 35px;
+		height: 35px;
+
+		i {
+			font-size: 0.8rem;
+		}
+	}
+
+	.swiper-pagination {
+		bottom: 60px;
+	}
+
+	.swiper-pagination-bullet {
+		width: 8px;
+		height: 8px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.custom-navigation {
+		right: 0;
+		transform: translateX(0);
+	}
+}
+
+.swiper-pagination-bullets {
+	// bottom: 8px !important;
+	// top: auto !important;
+	// left: 50% !important;
+	display: none;
+}
+.swiper-pagination-bullet {
+	background-color: var(--dark-gray-color);
+}
