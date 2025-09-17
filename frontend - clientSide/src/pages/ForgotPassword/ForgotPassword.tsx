@@ -68,9 +68,12 @@ const ForgotPassword = () => {
 
 	if (isSubmitted) {
 		return (
-			<div className="Forgot-Password-Page main-page mt-[70px] my-[60px]">
+			<div className="Forgot-Password-Page main-page  my-[60px]">
 				<div className="container relative">
-					<PageSwap id={isInitialLoad ? "loading-success" : "success"} direction="left">
+					<PageSwap
+						id={isInitialLoad ? "loading-success" : "success"}
+						direction="left"
+					>
 						{/* Back Button */}
 						<div className="back-button-container absolute top-[-55px] lg:top-[-30px] left-0">
 							<BackButton to="/login" text="Back to Login" />
@@ -85,9 +88,12 @@ const ForgotPassword = () => {
 	}
 
 	return (
-		<div className="Forgot-Password-Page main-page mt-[70px] my-[60px]">
+		<div className="Forgot-Password-Page main-page  my-[60px]">
 			<div className="container relative">
-				<PageSwap id={isInitialLoad ? "loading" : `forgot-${role}`} direction={pageDirection}>
+				<PageSwap
+					id={isInitialLoad ? "loading" : `forgot-${role}`}
+					direction={pageDirection}
+				>
 					{/* Back Button */}
 					<div className="back-button-container absolute top-[-55px] lg:top-[-30px]">
 						<BackButton to="/login" text="Back to Login" />

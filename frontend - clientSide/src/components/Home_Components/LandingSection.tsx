@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const LandingSection = () => {
 	return (
 		<main className="landing-section flex justify-center items-center">
@@ -16,10 +18,10 @@ const LandingSection = () => {
 				
 				{/* Buttons */}
 				<div className="home-buttons flex gap-5 flex-wrap justify-center">
-					<button className="btn-main-blue p-3 px-7 font-semibold flex items-center justify-center gap-2">
+					<NavLink to="/create-account?role=student" className="btn-main-blue p-3 px-7 font-semibold flex items-center justify-center gap-2">
 						<i className="fa-solid fa-rocket"></i>
 						Get Started
-					</button>
+					</NavLink>
 					<button className="btn-white font-semibold text-lg p-3 px-5 flex items-center justify-center gap-2">
 						<i className="fa-solid fa-download main-color"></i>
 						Install App

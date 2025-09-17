@@ -22,7 +22,7 @@ export interface FooterConfig {
 // ====================== Navigation Links Data ======================
 export const navigationLinks: NavigationLink[] = [
 	{ to: "/", label: "Home" },
-	{ to: "#about-developer", label: "About" },
+	{ to: "/about", label: "About" },
 	{ to: "/contact", label: "Contact" },
 	{ to: "/dashboard", label: "Dashboard" },
 	{ to: "/login", label: "Login" },

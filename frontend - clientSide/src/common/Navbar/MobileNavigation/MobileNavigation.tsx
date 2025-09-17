@@ -1,10 +1,7 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAppSelector } from "../../../utils/redux-toolkit/hooks";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
-import {
-	createHomeScrollHandler,
-	smoothScrollTo,
-} from "../../../utils/functions/smoothScroll";
+import { smoothScrollTo } from "../../../utils/functions/smoothScroll";
 
 interface MobileNavigationProps {
 	isOpen: boolean;
@@ -12,8 +9,18 @@ interface MobileNavigationProps {
 }
 
 const MobileNavigation = ({ isOpen, onLinkClick }: MobileNavigationProps) => {
-	const navigate = useNavigate();
 	const isAuth = useAppSelector((state) => state.userInfo.isAuth);
+
+	const handleSameRouteScroll = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		path: string
+	) => {
+		if (window.location.pathname === path) {
+			e.preventDefault();
+			smoothScrollTo("");
+			onLinkClick();
+		}
+	};
 
 	return (
 		<div className={`mobile-menu ${isOpen ? "open" : ""}`}>
@@ -36,23 +43,19 @@ const MobileNavigation = ({ isOpen, onLinkClick }: MobileNavigationProps) => {
 				</li>
 				{/* About Link */}
 				<li className="mobile-nav-item">
-					<a
-						href="#about-developer"
-						onClick={(e) => {
-							createHomeScrollHandler(
-								"about-developer",
-								90,
-								navigate
-							)(e);
-							onLinkClick();
-						}}
+					<NavLink
+						to="/about"
+						onClick={(e) => handleSameRouteScroll(e, "/about")}
 					>
 						About
-					</a>
+					</NavLink>
 				</li>
 				{/* Contact Link */}
 				<li className="mobile-nav-item">
-					<NavLink to="/contact" onClick={onLinkClick}>
+					<NavLink
+						to="/contact"
+						onClick={(e) => handleSameRouteScroll(e, "/contact")}
+					>
 						Contact
 					</NavLink>
 				</li>
@@ -60,12 +63,20 @@ const MobileNavigation = ({ isOpen, onLinkClick }: MobileNavigationProps) => {
 				<li className="mobile-nav-item">
 					{isAuth ? (
 						// Dashboard Link
-						<NavLink to="/dashboard" onClick={onLinkClick}>
+						<NavLink
+							to="/dashboard"
+							onClick={(e) =>
+								handleSameRouteScroll(e, "/dashboard")
+							}
+						>
 							Dashboard
 						</NavLink>
 					) : (
 						// Login Link
-						<NavLink to="/login" onClick={onLinkClick}>
+						<NavLink
+							to="/login"
+							onClick={(e) => handleSameRouteScroll(e, "/login")}
+						>
 							Login
 						</NavLink>
 					)}
@@ -77,9 +88,9 @@ const MobileNavigation = ({ isOpen, onLinkClick }: MobileNavigationProps) => {
 					<ProfileDropdown />
 				) : (
 					// Get Started Button
-					<button className="btn-main-blue p-3" onClick={onLinkClick}>
+					<NavLink to="/create-account?role=student" className="btn-main-blue p-3 text-center" onClick={onLinkClick}>
 						Get Started
-					</button>
+					</NavLink>
 				)}
 
 				{/* Install App Button */}

@@ -1,5 +1,6 @@
 import SectionHeading from "../../SectionHeading/SectionHeading";
 import RoleChoiceCard from "../RoleChoiceCard/RoleChoiceCard";
+import "./RoleSelector.scss";
 // Images
 import teacherImage from "../../../assets/images/teacher.png";
 import studentImage from "../../../assets/images/student.png";
@@ -11,42 +12,71 @@ const roles = [
 		roleImage: teacherImage,
 		roleDescription: "Teach & Manage Classes",
 		roleIcon: "fa-solid fa-user-graduate",
+		gradient: "from-blue-500 to-purple-600",
+		features: [
+			"Create Courses",
+			"Manage Students",
+			"Track Progress",
+			"Assign Quizzes",
+		],
 	},
 	{
 		role: "Student",
 		roleImage: studentImage,
-		roleDescription: "Learn & Take Quizzes & Track Progress",
+		roleDescription: "Learn & Track Progress",
 		roleIcon: "fa-solid fa-user",
+		gradient: "from-green-500 to-teal-600",
+		features: [
+			"Access Courses",
+			"Take Quizzes",
+			"Track Progress",
+			"Get Certificates",
+		],
 	},
 	{
 		role: "Admin",
 		roleImage: adminImage,
 		roleDescription: "Manage Platform",
 		roleIcon: "fa-solid fa-user-shield",
+		gradient: "from-orange-500 to-red-600",
+		features: [
+			"Manage Users",
+			"System Settings",
+			"Analytics",
+			"Content Moderation",
+		],
 	},
 ];
 
-const RoleSelector = ({ handleSelectRole }: { handleSelectRole: (role: string) => void }) => {
+const RoleSelector = ({
+	handleSelectRole,
+}: {
+	handleSelectRole: (role: string) => void;
+}) => {
 	return (
 		<div className="Role-Selector">
-			<SectionHeading
-				title="Choose Your Role"
-				subtitle="Continue as a Teacher, Student, or Admin"
-				classNameTitle="page-title"
-			/>
+			<div className="role-selector-content">
+				<SectionHeading
+					title="Choose Your Role"
+					subtitle="Select your role to get started with EduConnect"
+					classNameTitle="page-title"
+				/>
 
-			<main className="role-choices grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-10 pb-[50px]">
-				{roles.map((role) => (
-					<RoleChoiceCard
-						key={role.role}
-						role={role.role}
-						roleImage={role.roleImage}
-						roleDescription={role.roleDescription}
-						roleIcon={role.roleIcon}
-						onSelectRole={handleSelectRole}
-					/>
-				))}
-			</main>
+				<main className="role-choices">
+					{roles.map((role) => (
+						<RoleChoiceCard
+							key={role.role}
+							role={role.role}
+							roleImage={role.roleImage}
+							roleDescription={role.roleDescription}
+							roleIcon={role.roleIcon}
+							gradient={role.gradient}
+							features={role.features}
+							onSelectRole={handleSelectRole}
+						/>
+					))}
+				</main>
+			</div>
 		</div>
 	);
 };

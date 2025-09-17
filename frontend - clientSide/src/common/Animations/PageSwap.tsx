@@ -33,12 +33,20 @@ const PageSwap: React.FC<PageSwapProps> = ({
 		animate: {
 			opacity: 1,
 			...(axis === "x" ? { x: 0 } : { y: 0 }),
-			transition: { type: "spring", stiffness: 260, damping: 26 },
+			transition: {
+				type: "spring",
+				stiffness: 300,
+				damping: 30,
+				duration: 0.3,
+			},
 		},
 		exit: {
 			opacity: 0,
-			...(axis === "x" ? { x: -delta } : { y: -delta }),
-			transition: { duration: 0.18, ease: [0.2, 0, 0, 1] },
+			...(axis === "x" ? { x: -delta * 0.5 } : { y: -delta * 0.5 }),
+			transition: {
+				duration: 0.15,
+				ease: [0.4, 0, 0.2, 1],
+			},
 		},
 	};
 
@@ -51,6 +59,7 @@ const PageSwap: React.FC<PageSwapProps> = ({
 					initial="initial"
 					animate="animate"
 					exit="exit"
+					style={{ willChange: "transform, opacity" }}
 				>
 					{children}
 				</motion.div>

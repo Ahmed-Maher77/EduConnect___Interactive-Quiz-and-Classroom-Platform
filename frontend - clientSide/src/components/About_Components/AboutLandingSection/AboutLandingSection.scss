@@ -1,0 +1,28 @@
+.about-landing-section {
+    background: url("../../../src/assets/images/collaboration-1.jpg") no-repeat center center/cover;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    .container {
+        z-index: 2;
+    }
+    .section-heading {
+        h2 {
+            color: var(--fixed-white-color) !important;
+        }
+        p {
+            color: var(--light-gray-color) !important;
+            margin-top: 35px;
+            @media (min-width: 1024px) {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}

@@ -3,24 +3,24 @@ import "./SectionSlider.scss";
 import { Swiper } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
+// import "swiper/css/scrollbar";
+import "swiper/css/bundle";
+import type { SectionSliderProps } from "../../common/Types/Interfaces";
 
-interface SectionSliderProps {
-	scrollbar: boolean;
-	breakpoints: {
-		[key: number]: { slidesPerView: number; spaceBetween: number };
-	};
-	autoplay: boolean;
-	children: React.ReactNode | React.ReactNode[];
-	showPagination: boolean;
-}
-
-const SectionSlider = ({scrollbar, breakpoints, autoplay, children, showPagination}: SectionSliderProps) => {
+const SectionSlider = ({
+	scrollbar,
+	breakpoints,
+	autoplay,
+	children,
+	showPagination,
+	classNames,
+}: SectionSliderProps) => {
 	return (
 		<Swiper
+			className={classNames}
 			modules={[Navigation, Pagination, Scrollbar, Autoplay]}
 			breakpoints={breakpoints}
 			centeredSlides={false}

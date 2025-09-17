@@ -1,10 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import type { NavigationLink } from "../../common/Footer/footerData";
 import { useAppSelector } from "../../utils/redux-toolkit/hooks";
-import {
-	createHomeScrollHandler,
-	smoothScrollTo,
-} from "../../utils/functions/smoothScroll";
+import { smoothScrollTo } from "../../utils/functions/smoothScroll";
 
 interface NavigationLinksProps {
 	links: NavigationLink[];
@@ -36,23 +33,27 @@ const NavigationLink = ({
 		);
 	}
 
-	// Handle hash links (like #about-developer) - navigate to home first, then scroll
+	// Handle hash links - convert to About route (legacy section link removed)
 	if (link.to.startsWith("#")) {
-		const targetId = link.to.substring(1); // Remove the # from the href
 		return (
-			<a
-				href={link.to}
-				className="footer-link"
-				onClick={createHomeScrollHandler(targetId, 90, navigate)}
-			>
+			<Link to="/about" className="footer-link">
 				{link.label}
-			</a>
+			</Link>
 		);
 	}
 
-	// Handle regular links (like /login, /dashboard)
+	// Handle regular links and enable same-route scroll-to-top
 	return (
-		<Link to={link.to} className="footer-link">
+		<Link
+			to={link.to}
+			className="footer-link"
+			onClick={(e) => {
+				if (window.location.pathname === link.to) {
+					e.preventDefault();
+					smoothScrollTo("");
+				}
+			}}
+		>
 			{link.label}
 		</Link>
 	);

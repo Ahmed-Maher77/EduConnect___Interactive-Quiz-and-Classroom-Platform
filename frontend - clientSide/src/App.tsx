@@ -9,6 +9,7 @@ import Layout from "./pages/Layout";
 import PageLoader from "./components/Loader/PageLoader/PageLoader";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
 const Login = lazy(() => import("./pages/Login/Login"));
 const CreateAccount = lazy(() => import("./pages/CreateAccount/CreateAccount"));
 
@@ -20,6 +21,8 @@ function App() {
         // Home Page
         { path: "/", element: <Home /> },
         // Contact Page
+        // About Page
+        { path: "/about", element: <Suspense fallback={<PageLoader />}> <About /> </Suspense> },
         { path: "/contact", element: <Suspense fallback={<PageLoader />}> <Contact /> </Suspense> },
         // Login Page
         {

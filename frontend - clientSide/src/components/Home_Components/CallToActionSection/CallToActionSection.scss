@@ -1,25 +1,30 @@
 // ====================== Call To Action Section ======================
 .Call-To-Action-Section {
-	background-color: var(--cta-bg-color);
+	background-color: transparent;
+	color: var(--black-color);
+	&.blue {
+		background-color: var(--cta-bg-color);
+		color: var(--white-color);
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(
+				135deg,
+				var(--cta-bg-color) 0%,
+				var(--cta-accent-color) 100%
+			);
+			opacity: 0.1;
+			pointer-events: none;
+		}
+	}
 	padding: 5rem 0;
 	position: relative;
 	overflow: hidden;
 
-	&::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(
-			135deg,
-			var(--cta-bg-color) 0%,
-			var(--cta-accent-color) 100%
-		);
-		opacity: 0.1;
-		pointer-events: none;
-	}
 }
 
 // ====================== CTA Content ======================
@@ -35,7 +40,7 @@
 .cta-title {
 	font-size: 2.5rem;
 	font-weight: 700;
-	color: var(--white-color);
+	color: inherit;
 	margin-bottom: 1rem;
 	line-height: 1.2;
 	letter-spacing: -0.5px;
@@ -52,7 +57,7 @@
 // ====================== CTA Subtitle ======================
 .cta-subtitle {
 	font-size: 1.25rem;
-	color: var(--white-color);
+	color: var(--dark2-gray-color);
 	margin-bottom: 3rem;
 	opacity: 0.9;
 	line-height: 1.5;
@@ -66,6 +71,9 @@
 		font-size: 1rem;
 		margin-bottom: 2rem;
 	}
+}
+.Call-To-Action-Section.blue .cta-subtitle {
+	color: var(--white-color);
 }
 
 // ====================== CTA Buttons ======================
@@ -126,14 +134,14 @@
 
 // ====================== Primary Button ======================
 .cta-btn-primary {
-	background-color: var(--white-color);
-	color: var(--cta-bg-color);
-	border-color: var(--white-color);
+	background-color: var(--main-blue-color);
+	color: var(--fixed-white-color);
+	border-color: var(--main-blue-color);
 
 	&:hover {
 		background-color: transparent;
-		color: var(--white-color);
-		border-color: var(--white-color);
+		color: var(--main-blue-color);
+		border-color: var(--main-blue-color);
 		transform: translateY(-2px);
 		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 	}
@@ -142,22 +150,41 @@
 		transform: translateY(0);
 	}
 }
+.Call-To-Action-Section.blue .cta-btn-primary {
+	background-color: var(--white-color);
+	color: var(--main-blue-color);
+	border-color: var(--white-color);
+	&:hover {
+		background-color: transparent;
+		color: var(--white-color);
+		border-color: var(--white-color);
+	}
+}
 
 // ====================== Secondary Button ======================
 .cta-btn-secondary {
-	background-color: transparent;
-	color: var(--white-color);
-	border-color: var(--white-color);
+	background-color: var(--main-gray-color);
+	color: var(--fixed-black-color);
+	border-color: var(--main-gray-color);
 
 	&:hover {
-		background-color: var(--white-color);
-		color: var(--cta-bg-color);
+		background-color: var(--icon-gray-color);
+		color: var(--fixed-white-color);
 		transform: translateY(-2px);
 		box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 	}
 
 	&:active {
 		transform: translateY(0);
+	}
+}
+.Call-To-Action-Section.blue .cta-btn-secondary {
+	background-color: transparent;
+	color: var(--white-color);
+	border-color: var(--white-color);
+	&:hover {
+		background-color: var(--white-color);
+		color: var(--cta-bg-color);
 	}
 }
 

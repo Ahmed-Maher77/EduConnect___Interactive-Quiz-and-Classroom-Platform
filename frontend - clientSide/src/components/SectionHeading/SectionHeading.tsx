@@ -9,7 +9,7 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
 	return (
 		<div
-			className="section-heading text-center mb-[50px] mx-auto w-full"
+			className="section-heading text-center mb-[60px] mx-auto w-full"
 			style={{ maxWidth: maxWidth || "700px" }}
 		>
 			<h2
@@ -23,7 +23,7 @@ const SectionHeading = ({
 			</h2>
 
 			{subtitle && (
-				<p className="xl:text-lg dark2-gray-color w-[90%] mx-auto mt-3">
+				<p className={`xl:text-lg dark2-gray-color w-[90%] mx-auto mt-3`}>
 					{subtitle}
 				</p>
 			)}

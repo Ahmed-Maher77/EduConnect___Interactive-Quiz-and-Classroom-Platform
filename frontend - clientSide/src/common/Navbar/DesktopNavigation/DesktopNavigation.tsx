@@ -1,8 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import {
-	createHomeScrollHandler,
-	smoothScrollTo,
-} from "../../../utils/functions/smoothScroll";
+import { smoothScrollTo } from "../../../utils/functions/smoothScroll";
 
 interface DesktopNavigationProps {
 	isAuth: boolean;
@@ -11,6 +8,17 @@ interface DesktopNavigationProps {
 
 const DesktopNavigation = ({ isAuth, onLinkClick }: DesktopNavigationProps) => {
 	const navigate = useNavigate();
+
+	const handleSameRouteScroll = (
+		e: React.MouseEvent<HTMLAnchorElement>,
+		path: string
+	) => {
+		if (window.location.pathname === path) {
+			e.preventDefault();
+			smoothScrollTo("");
+			onLinkClick();
+		}
+	};
 
 	return (
 		<ul className="Navbar-List hidden lg:flex gap-5">
@@ -32,36 +40,38 @@ const DesktopNavigation = ({ isAuth, onLinkClick }: DesktopNavigationProps) => {
 			</li>
 			{/* About Link */}
 			<li className="Navbar-Item text-lg">
-				<a
-					href="#about-developer"
-					onClick={(e) => {
-						createHomeScrollHandler(
-							"about-developer",
-							90,
-							navigate
-						)(e);
-						onLinkClick();
-					}}
+				<NavLink
+					to="/about"
+					onClick={(e) => handleSameRouteScroll(e, "/about")}
 				>
 					About
-				</a>
+				</NavLink>
 			</li>
 			{/* Contact Link */}
 			<li className="Navbar-Item text-lg">
-				<NavLink to="/contact" onClick={onLinkClick}>
+				<NavLink
+					to="/contact"
+					onClick={(e) => handleSameRouteScroll(e, "/contact")}
+				>
 					Contact
 				</NavLink>
 			</li>
-			{/* Dashboard Link */}
+			{/* Dashboard/Login Link */}
 			<li className="Navbar-Item text-lg">
 				{isAuth ? (
 					// Dashboard Link
-					<NavLink to="/dashboard" onClick={onLinkClick}>
+					<NavLink
+						to="/dashboard"
+						onClick={(e) => handleSameRouteScroll(e, "/dashboard")}
+					>
 						Dashboard
 					</NavLink>
 				) : (
-					// Login Link 
-					<NavLink to="/login" onClick={onLinkClick}>
+					// Login Link
+					<NavLink
+						to="/login"
+						onClick={(e) => handleSameRouteScroll(e, "/login")}
+					>
 						Login
 					</NavLink>
 				)}

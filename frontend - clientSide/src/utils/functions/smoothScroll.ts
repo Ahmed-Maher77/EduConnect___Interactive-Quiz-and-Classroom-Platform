@@ -55,3 +55,25 @@ export const createHomeScrollHandler = (
 		}
 	};
 };
+
+// Creates a handler that navigates to a specific route first, then scrolls
+export const createRouteScrollHandler = (
+	route: string,
+	targetId: string,
+	offset: number = 90,
+	navigate: (path: string) => void
+) => {
+	return (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+		e.preventDefault();
+
+		const doScroll = () =>
+			setTimeout(() => smoothScrollTo(targetId, offset), 120);
+
+		if (window.location.pathname !== route) {
+			navigate(route);
+			setTimeout(doScroll, 420); // allow route to mount
+		} else {
+			doScroll();
+		}
+	};
+};

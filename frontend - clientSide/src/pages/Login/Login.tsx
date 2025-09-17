@@ -43,7 +43,7 @@ const Login = () => {
 	};
 
 	return (
-		<div className="Login-Page main-page mt-[70px] my-[60px]">
+		<div className="Login-Page main-page  my-[60px]">
 			<div className="container">
 				<PageSwap id={selectedRole ?? "none"} direction={dir}>
 					{!selectedRole ? (

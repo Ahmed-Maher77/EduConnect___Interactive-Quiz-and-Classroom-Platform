@@ -2,6 +2,7 @@ import { useAppSelector } from "../../../utils/redux-toolkit/hooks";
 import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
 import ProfileDropdown from "../ProfileDropdown/ProfileDropdown";
+import { NavLink } from "react-router-dom";
 
 const DesktopButtons = () => {
 	const themeMode = useAppSelector((state) => state.globalStates.themeMode);
@@ -16,7 +17,7 @@ const DesktopButtons = () => {
 			{isAuth ? (
 				<ProfileDropdown />
 			) : (
-				<button className="btn-main-blue">Get Started</button>
+				<NavLink to="/create-account?role=student" className="btn-main-blue">Get Started</NavLink>
 			)}
 		</div>
 	);

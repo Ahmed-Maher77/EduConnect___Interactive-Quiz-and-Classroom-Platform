@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./LanguageSwitcher.scss";
 import { useAppDispatch } from "../../../utils/redux-toolkit/hooks";
 import { changeLang } from "../../../utils/redux-toolkit/globalStates_Slice";

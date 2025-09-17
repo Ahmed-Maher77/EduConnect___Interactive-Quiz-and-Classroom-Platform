@@ -8,17 +8,29 @@ import OurImpactSection from "../../components/Home_Components/OurImpactSection/
 import "./Home.scss";
 
 const Home = () => {
-    return (
-        <div className="Home-Page">
-            <LandingSection />
-            <FeaturesSection />
+	return (
+		<div className="Home-Page">
+			<LandingSection />
+			
+            <FeaturesSection length={6} />
+			
             <OurImpactSection />
+			
             <BestTeacherSection />
+			
             <AboutDeveloper />
-            <CallToActionSection />
+			
+            <CallToActionSection
+				title="Ready to Start Your Learning Journey?"
+				subtitle="Join thousands of students and teachers today."
+				studentButtonText="Sign Up as a Student"
+				teacherButtonText="Become a Teacher"
+                bg="blue"
+			/>
+			
             <FAQSection />
-        </div>
-    );
+		</div>
+	);
 };
 
 export default Home;

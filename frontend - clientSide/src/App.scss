@@ -8,6 +8,7 @@
 	--blue-color: #155dfc;
 	--dark-blue-color: #1e3a8a;
 	--light-blue-color: #5c90cb;
+	--light2-blue-color: #80DEEA;
 	--main-gray-color: #e0e0e0;
 	--light-gray-color: #d1d5db;
 	--light-gray-color-2: #e2e2e2;
@@ -24,6 +25,8 @@
 	--fixed-white-color: #fff;
 	--section-bg: #f1f5f9;
 	--trans-3: all 0.3s ease;
+	// Background Colors
+	--white-bg-color: #ffffff;
 	// Our Impact Section Colors
 	--impact-accent-color: #3fa9c9;
 	--impact-number-color: #1e40af;
@@ -51,10 +54,15 @@
 	--input-bg-color: #f5f5f5;
 	// Text colors
 	--text-gray-color: #6a7282;
+	// Testimonials colors
+	--testimonials-text-color: #101828;
+	--quote-text-color: #364153;
 }
 
 // Dark Mode
 :root.dark {
+	--body-bg-color: #111827;
+	--section-bg: #111827;
 	// Dark mode variables can be added here when needed
 }
 @media (prefers-color-scheme: dark) {
@@ -71,6 +79,15 @@ body {
 .main-page {
 	min-height: 100vh;
 	padding-top: 70px;
+	@media (max-width: 991px) {
+		padding-top: 64px;
+	}
+}
+.landing-section {
+	min-height: calc(100vh - 70px);
+	@media (max-width: 991px) {
+		min-height: calc(100vh - 64px);
+	}
 }
 // ====================== Container Class ======================
 // sm
@@ -178,10 +195,16 @@ body {
 		color: var(light-mode-toggle-hover-color);
 	}
 }
+.testimonials-text-color {
+	color: var(--testimonials-text-color);
+}
+.quote-text-color {
+	color: var(--quote-text-color);
+}
 
 // Background Colors
 .white-bg {
-	background-color: var(--white-color);
+	background-color: var(--white-bg-color);
 }
 .section-bg {
 	background-color: var(--section-bg);
@@ -194,6 +217,9 @@ body {
 }
 .input-bg-color {
 	background-color: var(--input-bg-color);
+}
+.body-bg-color {
+	background-color: var(--body-bg-color);
 }
 
 // Buttons
@@ -276,6 +302,15 @@ body {
 	&.light-shadow-hover {
 		&:hover {
 			box-shadow: 0 0px 0px 1.5px rgba(141, 141, 141, 0.2);
+		}
+	}
+}
+.card-shadow {
+	box-shadow: 0 0px 0px 1.5px rgba(65, 130, 236, 0.1);
+	transition: all 0.3s ease;
+	&.card-shadow-hover {
+		&:hover {
+			box-shadow: 0 0px 0px 2px rgba(65, 130, 236, 0.8);
 		}
 	}
 }

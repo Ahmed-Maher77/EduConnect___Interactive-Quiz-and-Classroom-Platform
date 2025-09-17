@@ -1,0 +1,40 @@
+// ====================== Team Cards Container Styles ======================
+.Team-Cards {
+	padding: 0 0 2rem 0;
+
+	.team-cards-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin: 0 auto;
+		padding: 0 1rem;
+
+		@media (min-width: 768px) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 2.5rem;
+		}
+
+		@media (min-width: 1024px) {
+			gap: 3rem;
+		}
+	}
+}
+
+// ====================== Responsive Adjustments ======================
+@media (max-width: 767px) {
+	.Team-Cards {
+		.team-cards-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 0 0.5rem;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.Team-Cards {
+		.team-cards-grid {
+			padding: 0;
+		}
+	}
+}

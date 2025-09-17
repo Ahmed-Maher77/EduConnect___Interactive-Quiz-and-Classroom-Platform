@@ -2,6 +2,13 @@
 	width: 100%;
 	height: 120%;
 	min-height: 500px;
+	padding-top: 30px !important;
+	padding-bottom: 30px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+	&.testimonials-slider {
+		min-height: 400px;
+	}
 	max-width: 100%;
 	// If Autoplay progress is activated
 	position: relative;
