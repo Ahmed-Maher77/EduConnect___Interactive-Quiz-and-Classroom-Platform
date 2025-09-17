@@ -3,11 +3,10 @@ import "./SectionSlider.scss";
 import { Swiper } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
 // Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/css/pagination";
-// import "swiper/css/scrollbar";
-import "swiper/css/bundle";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import type { SectionSliderProps } from "../../common/Types/Interfaces";
 
 const SectionSlider = ({

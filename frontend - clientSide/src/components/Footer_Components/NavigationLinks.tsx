@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import type { NavigationLink } from "../../common/Footer/footerData";
 import { useAppSelector } from "../../utils/redux-toolkit/hooks";
 import { smoothScrollTo } from "../../utils/functions/smoothScroll";
@@ -7,13 +7,7 @@ interface NavigationLinksProps {
 	links: NavigationLink[];
 }
 
-const NavigationLink = ({
-	link,
-	navigate,
-}: {
-	link: NavigationLink;
-	navigate: (path: string) => void;
-}) => {
+const NavigationLinkItem = ({ link }: { link: NavigationLink }) => {
 	// Handle Home link specially - scroll to top if already on home page
 	if (link.to === "/") {
 		return (
@@ -60,7 +54,6 @@ const NavigationLink = ({
 };
 
 const NavigationLinks = ({ links }: NavigationLinksProps) => {
-	const navigate = useNavigate();
 	const isAuth = useAppSelector((state) => state.userInfo.isAuth);
 
 	return (
@@ -68,13 +61,7 @@ const NavigationLinks = ({ links }: NavigationLinksProps) => {
 			{links.map((link) => {
 				if (isAuth && link.to === "/login") return null;
 				if (!isAuth && link.to === "/dashboard") return null;
-				return (
-					<NavigationLink
-						key={link.to}
-						link={link}
-						navigate={navigate}
-					/>
-				);
+				return <NavigationLinkItem key={link.to} link={link} />;
 			})}
 		</div>
 	);

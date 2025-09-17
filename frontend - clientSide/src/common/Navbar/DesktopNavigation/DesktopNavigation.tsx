@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { smoothScrollTo } from "../../../utils/functions/smoothScroll";
 
 interface DesktopNavigationProps {
@@ -7,8 +7,6 @@ interface DesktopNavigationProps {
 }
 
 const DesktopNavigation = ({ isAuth, onLinkClick }: DesktopNavigationProps) => {
-	const navigate = useNavigate();
-
 	const handleSameRouteScroll = (
 		e: React.MouseEvent<HTMLAnchorElement>,
 		path: string
