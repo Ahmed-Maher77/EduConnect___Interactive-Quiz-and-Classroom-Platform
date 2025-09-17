@@ -1,0 +1,36 @@
+{
+  "name": "educonnect_interactive-quiz-and-classroom-platform",
+  "version": "1.0.0",
+  "description": "EduConnect is a full-stack quiz and classroom web application designed for students, teachers, and administrators. It provides a professional learning environment with quizzes, classes, lessons, real-time chat, and progress tracking. Built with scalability, accessibility, and multilingual support (Arabic & English) in mind.",
+  "keywords": [
+    "educonnect",
+    "backend",
+    "server-side",
+    "classroom",
+    "quizzess",
+    "full-stack",
+    "web-application",
+    "students",
+    "teachers",
+    "admins",
+    "learning-system",
+    "learning-management-system",
+    "classes",
+    "lessons",
+    "real-time",
+    "chat",
+    "progress-tracking"
+  ],
+  "license": "ISC",
+  "author": "Ahmed Maher",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.0"
+  }
+}
