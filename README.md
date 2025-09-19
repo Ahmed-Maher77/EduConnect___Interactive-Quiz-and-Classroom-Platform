@@ -56,9 +56,6 @@ EduConnect is an **online learning management system** that enhances classrooms 
 - Manage real-time classroom chat (ban/remove users)  
 - Track student performance: quiz results, lesson activity, and reactions  
 - Receive ratings for classes and build a professional teacher profile  
-
----
-
 ### 👨‍🎓 For Students
 - Multi-step registration with OTP, social logins, and third-party login  
 - Join classes by ID/name with teacher approval  
@@ -68,17 +65,11 @@ EduConnect is an **online learning management system** that enhances classrooms 
 - Participate in real-time class chat (edit/delete own messages)  
 - Rate and review teachers and classes  
 - Switch between English and Arabic language options  
-
----
-
 ### 🛠️ For Administrators
 - Manage teachers, students, classes, quizzes, and lessons  
 - Role management: Main Admin vs Assistant Admin  
 - Handle complaints and user feedback  
 - Access platform-wide analytics and reports  
-
----
-
 ### 🌍 Platform-Wide Features
 - **Security**: JWT authentication & bcrypt password hashing  
 - **Themes**: Light/Dark mode support  
