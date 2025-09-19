@@ -1,114 +1,126 @@
-# EduMaster – Interactive Quiz & Classroom Platform  
+# EduConnect – online learning management system (Full-Stack) 
 
-EduMaster is a **full-stack quiz and classroom web application** designed for students, teachers, and administrators. It provides a professional learning environment with quizzes, classes, lessons, real-time chat, and progress tracking. Built with scalability, accessibility, and multilingual support (Arabic & English) in mind.  
-
----
-
-## 🚀 Features  
-
-### 👩‍🏫 Teacher Features  
-- Create & manage classes (ID, name, image, stats).  
-- Approve/reject student join requests.  
-- Create and manage quizzes/exams with advanced options:  
-  - Timed or untimed  
-  - Single/multiple correct answers  
-  - Hints, explanations, and media support (images, videos, code blocks, equations)  
-  - Printable/exportable quizzes with answers  
-- Add lessons (videos, PDFs, articles, references).  
-- Manage live classroom chat (ban/remove students, delete messages).  
-- Track student activity: quiz results, lesson views, reactions.  
-- Rate students and receive ratings for classes.  
-- Profile with specialization, overview, and contact info.  
-
-### 👨‍🎓 Student Features  
-- Register/login (multi-step with OTP, social media, or third-party login).  
-- Join classes via ID/name (pending teacher approval).  
-- Take quizzes with real-time progress bar and answer tracking.  
-- View past quizzes with answers, grades, feedback, and downloadable PDF.  
-- Interact with lessons (comments, reactions, favorites).  
-- Join class chat, edit/delete own messages.  
-- Rate and review teachers and classes.  
-- Multilingual profiles (English + optional Arabic).  
-
-### 🛠️ Admin Features  
-- Manage all teachers, students, classes, quizzes, and lessons.  
-- Role management: Main Admin vs Assistant Admin.  
-- Control over complaints submitted by users.  
-- Add/remove admins with defined permissions.  
-
-### 🌍 Platform Features  
-- 🔐 Secure Authentication (JWT, password hashing).  
-- 🎨 Light/Dark Mode toggle.  
-- 🌐 Multilingual (English + Arabic).  
-- 📱 Progressive Web App (PWA) – installable on desktop & mobile.  
-- 🔔 Notifications (new quizzes, results, join requests, chat messages, etc.).  
-- 📊 Analytics & Stats with flowcharts (students, teachers, classes, lessons, quizzes).  
-- 📝 Rich Text Editor for lessons/articles.  
-- 📂 Filtering & Pagination for teachers, classes, students, and lessons.  
-- ⭐ Best Teachers Section (highlighting ratings, students, classes).  
-- 📧 Complaint System (form with topic, details, user info).  
-- ⚡ Responsive design with accessibility (WCAG 2.1 AA compliant).  
+EduConnect is an **online learning management system** that enhances classrooms with interactive lessons, quizzes, progress tracking, real-time chat, and continuous feedback to create a dynamic learning experience. It also offers multilingual support (Arabic & English) and light/dark theme options for accessibility and personalizatio
 
 ---
 
-## 🖼️ UI Overview  
-- **Home Page** → Landing section, features, call-to-action, about section, best teachers, FAQ, footer.  
-- **Auth Pages** → Login, Multi-step Register, Forgot Password, Reset Password, Role Selection.  
-- **Dashboards** → Teacher & Student dashboards with stats, class management, quizzes, and requests.  
-- **Class Pages** → Class details, lessons, chat, quizzes, and student management.  
-- **Profiles** → Separate views for teachers, students, and admin.  
-- **Quiz Pages** → Quiz taking, results summary, review answers, print/export.  
-- **About Page** → Mission, vision, features, statistics, testimonials, and team.  
+## 🌐 Live Preview
+
+👀 **Watch Live Demo:** (https://educonnect-chi.vercel.app/)[https://educonnect-chi.vercel.app/]
 
 ---
 
-## 🛠️ Tech Stack  
+## 🎥 Demo Video
 
-### Frontend  
-- **React.js / Vite** – modern SPA framework  
-- **Redux Toolkit / TanStack Query** – state & data management  
-- **Tailwind CSS + SCSS** – responsive, modern UI  
-- **Framer Motion** – smooth animations  
-- **Formik + Yup** – form handling & validation  
-- **Firebase / Supabase** – notifications, storage, and optional backend services  
-
-### Backend  
-- **Node.js + Express.js** – RESTful API  
-- **MongoDB (Mongoose)** – database for users, classes, quizzes, lessons  
-- **JWT Authentication + Bcrypt** – secure login  
-- **WebRTC / Socket.io** – real-time chat and notifications  
-
-### Other Tools  
-- **PWA support** – mobile/desktop installable  
-- **Flowbite / shadcn/ui** – UI components  
-- **Chart.js / Recharts** – analytics & stats visualization  
-- **Docker** – containerized deployment (optional)  
+📺 **Watch the Demo on LinkedIn:** [coming soon]()
 
 ---
 
-## 📦 Installation  
+## 💻 Used Technologies
 
-1. **Clone the repository**  
-   ```bash
-     git clone https://github.com/Maher77/EduMaster___Interactive-Quiz-and-Classroom-Platform.git
-     cd EduMaster___Interactive-Quiz-and-Classroom-Platform
-   ```
-2. **Install dependencies**
-   ```
-     npm install
-   ```
-3. **Setup environment variables in `.env`:**
+### Frontend
+- **React.js** – Modern SPA framework for building dynamic, interactive, responsive interfaces.  
+- **TypeScript** – Type-safe development for scalability and reliability.  
+- **Redux Toolkit** – Efficient state management across the app.  
+- **React Router DOM** – Seamless client-side routing and navigation.  
+- **Framer Motion** – Smooth animations and transitions.  
+- **Formik + Yup** – Robust form handling and validation.  
+- **Swiper** – Modern touch slider for lessons and media.  
+- **FontAwesome** – Rich icon set for UI enhancement.  
+### Styling
+- **Tailwind CSS** – Utility-first CSS framework for responsive and customizable design.  
+- **SASS/SCSS** – Structured and maintainable styling with variables, nesting, placeholders and mixins.  
+### Backend
+- **Node.js + Express.js** – RESTful API server for business logic and routing.  
+- **MySQL2** – Relational database management.  
+- **JWT (jsonwebtoken)** – Secure authentication with token-based sessions.  
+- **Bcrypt** – Password hashing for strong security.  
+### Development Tools
+- **Vite** – Fast build tool and development server.  
+- **ESLint + TypeScript ESLint** – Code quality and linting.  
+### Hosting
+- Deployed on **Vercel** for fast, reliable hosting.  
+
+---
+
+## ✨ Key Features
+
+### 👨‍🏫 For Teachers
+- Create and manage classes with unique IDs, images, and statistics  
+- Approve or reject student join requests  
+- Build advanced quizzes:
+  - Timed/untimed, single/multiple answers  
+  - Add hints, explanations, images, videos, code, and equations  
+  - Export quizzes with answers to PDF/print  
+- Upload and manage lessons (videos, PDFs, articles, references)  
+- Manage real-time classroom chat (ban/remove users)  
+- Track student performance: quiz results, lesson activity, and reactions  
+- Receive ratings for classes and build a professional teacher profile  
+
+---
+
+### 👨‍🎓 For Students
+- Multi-step registration with OTP, social logins, and third-party login  
+- Join classes by ID/name with teacher approval  
+- Take interactive quizzes with progress tracking  
+- Review past quizzes with answers, feedback, and downloadable PDFs  
+- Engage with lessons through comments, reactions, and favorites  
+- Participate in real-time class chat (edit/delete own messages)  
+- Rate and review teachers and classes  
+- Switch between English and Arabic language options  
+
+---
+
+### 🛠️ For Administrators
+- Manage teachers, students, classes, quizzes, and lessons  
+- Role management: Main Admin vs Assistant Admin  
+- Handle complaints and user feedback  
+- Access platform-wide analytics and reports  
+
+---
+
+### 🌍 Platform-Wide Features
+- **Security**: JWT authentication & bcrypt password hashing  
+- **Themes**: Light/Dark mode support  
+- **Multilingual**: English and Arabic  
+- **PWA**: Installable on desktop and mobile  
+- **Notifications**: Real-time alerts for quizzes, results, join requests, and chats  
+- **Analytics**: Flowcharts for students, teachers, classes, and lessons  
+- **Rich Text Editor**: For lessons and articles  
+- **Advanced Filtering**: Pagination for teachers, classes, and lessons  
+- **Best Teachers Section**: Highlight top-rated instructors  
+- **Accessibility**: WCAG 2.1 AA compliant responsive design  
+
+---
+
+## 📥 Installation Instructions for Local Setup
+
+  ```bash
+    # Clone the repository
+    git clone https://github.com/Ahmed-Maher77/EduConnect___Online-Learning-Management-System.git
+    cd EduConnect___Online-Learning-Management-System
+
+    # Run frontend (Vite)
+    cd frontend - clientSide
+    npm install
+    npm run dev
+
+    # Run backend (Node.js + Express)
+    cd backend - serverSide
+    npm install
+    npm start
   ```
-  PORT=5000
-  MONGO_URI=your_mongodb_connection
-  JWT_SECRET=your_jwt_secret
-  FIREBASE_API_KEY=your_firebase_key
-  ```
-4. **Run the app**
-```
-  # Start backend
-  npm start  
-  
-  # Start frontend
-  npm run dev  
-```
+---
+
+## 📬 Contact & Contribution
+- 🧑‍💻 **Portfolio:** <a href="https://ahmedmaher-portfolio.vercel.app/" title="See My Portfolio">https://ahmedmaher-portfolio.vercel.app/</a>
+- 🔗 **LinkedIn:** <a href="https://www.linkedin.com/in/ahmed-maher-algohary" title="Contact via LinkedIn">https://www.linkedin.com/in/ahmed-maher-algohary</a>
+- 📧 **Email:** <a href="mailto:ahmedmaher.dev1@gmail.com" title="Contact via Email">ahmedmaher.dev1@gmail.com</a>
+
+> Contributions, suggestions, and bug reports are welcome. Feel free to open issues or pull requests.
+
+---
+
+## ⭐ Support
+
+If you found this project helpful or inspiring, please consider giving it a ⭐. Your support helps me grow and share more open-source projects like this!
