@@ -1,12 +1,12 @@
 # EduConnect – online learning management system (Full-Stack) 
 
-EduConnect is an **online learning management system** that enhances classrooms with interactive lessons, quizzes, progress tracking, real-time chat, and continuous feedback to create a dynamic learning experience. It also offers multilingual support (Arabic & English) and light/dark theme options for accessibility and personalizatio
+EduConnect is an **online learning management system** that enhances classrooms with interactive lessons, quizzes, progress tracking, real-time chat, and continuous feedback to create a dynamic learning experience. It also offers multilingual support (Arabic & English) and light/dark theme options for accessibility and personalization.
 
 ---
 
 ## 🌐 Live Preview
 
-👀 **Watch Live Demo:** (https://educonnect-chi.vercel.app/)[https://educonnect-chi.vercel.app/]
+👀 **Watch Live Demo:** [https://educonnect-chi.vercel.app](https://educonnect-chi.vercel.app/)
 
 ---
 
