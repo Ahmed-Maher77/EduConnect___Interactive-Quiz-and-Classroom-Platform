@@ -81,3 +81,56 @@ export interface TeamMember {
 	avatar: string;
 	description?: string;
 }
+
+// ComplainForm component props
+export interface ComplainFormValues {
+	complainTitle: string;
+	complainSubject: string;
+	name: string;
+	email: string;
+	role: string;
+	userId: string;
+}
+
+
+// CountrySelect component props
+// CountryOption component props
+export interface CountryOption {
+	code: string;
+	name: string;
+}
+export interface CountrySelectProps {
+	id: string;
+	name: string;
+	value: string; // country code or name depending on usage; here we'll use country name
+	onChange: (newValue: string) => void;
+	placeholder?: string;
+	className?: string;
+	disabled?: boolean;
+}
+
+// Confirmation component props
+type ConfirmationSection = "personal" | "professional" | "documents";
+export interface ConfirmationProps {
+	onEditSection?: (section: ConfirmationSection) => void;
+	data?: {
+		personal?: {
+			firstName?: string;
+			lastName?: string;
+			email?: string;
+			phone?: string;
+			dateOfBirth?: string;
+		};
+		professional?: {
+			title?: string;
+			yearsOfExperience?: string;
+			subjects?: string[];
+			shortBio?: string;
+		};
+		documents?: {
+			idDocumentName?: string | null;
+			certificateName?: string | null;
+			country?: string;
+		};
+	};
+}

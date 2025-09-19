@@ -1,0 +1,19 @@
+.image-overlay-link-container {
+    overflow: hidden;
+    // Add to it => group + relative
+    &:hover .fa-arrow-up-right-from-square {
+        color: var(--light2-blue-color) !important;
+    }
+    .fa-arrow-up-right-from-square:hover {
+        color: var(--fixed-white-color) !important;
+    }
+}
+.image-overlay-link {
+    border-radius: inherit;
+    .fa-arrow-up-right-from-square {
+		&:hover {
+			transform: scale(1.1);
+			color: var(--gray-color);
+		}
+	}
+}

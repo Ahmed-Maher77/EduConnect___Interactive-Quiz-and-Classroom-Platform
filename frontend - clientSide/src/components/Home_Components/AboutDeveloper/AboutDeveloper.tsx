@@ -1,5 +1,9 @@
+import ImageOverlayLink from "../../ImageOverlayLink/ImageOverlayLink";
 import SectionHeading from "../../SectionHeading/SectionHeading";
 import "./AboutDeveloper.scss";
+
+const developerImage =
+	"https://res.cloudinary.com/djpxtccbf/image/upload/v1758069500/My-Picture-Formal_hzsk0g.jpg";
 
 const AboutDeveloper = () => {
 	return (
@@ -15,10 +19,22 @@ const AboutDeveloper = () => {
 				/>
 
 				{/* Developer Card */}
-				<div className="developer-card">
+				<div className="developer-card relative">
+					
+					<figure className="w-[150px] h-[150px] rounded-full absolute top-0 group left-1/2 -translate-x-1/2 -translate-y-1/2 image-overlay-link-container">
+						<img
+							className="w-full h-full border-body-color rounded-full object-cover object-top inline-block"
+							src={developerImage}
+							alt="Ahmed Maher"
+							loading="lazy"
+						/>
+
+						<ImageOverlayLink href="https://ahmedmaher-portfolio.vercel.app/" />
+
+					</figure> 
 					<div className="developer-info">
 						{/* Developer Description */}
-						<p className="developer-description">
+						<p className="developer-description mt-8">
 							I'm Ahmed Maher, a passionate full-stack developer
 							with a Bachelor's in Computer and Control Systems
 							Engineering. Specialized in creating dynamic,

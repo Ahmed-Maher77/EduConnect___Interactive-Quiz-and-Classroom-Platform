@@ -1,0 +1,97 @@
+.drag-drop-area {
+	border: 2px dashed var(--border-gray-color);
+	background: var(--light3-gray-color);
+	border-radius: 12px;
+	padding: 22px 18px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	text-align: center;
+	color: var(--dark3-gray-color);
+	cursor: pointer;
+	transition: var(--trans-3);
+	outline: none;
+
+	&:hover {
+		border-color: var(--main-blue-color);
+		background: var(--light2-gray-color);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+	}
+
+	&:focus-visible {
+		border-color: var(--main-blue-color);
+		box-shadow: 0 0 0 3px rgba(65, 130, 236, 0.25);
+	}
+
+	i {
+		font-size: 26px;
+		color: var(--main-blue-color);
+	}
+
+	p {
+		font-size: 0.95rem;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	.upload-cta {
+		font-size: 0.95rem;
+		.line-1 {
+			margin-bottom: 4px;
+		}
+		.link-blue {
+			color: var(--main-blue-color);
+			font-weight: 600;
+		}
+	}
+
+	.hint {
+		font-size: 0.85rem;
+		color: var(--dark3-gray-color);
+		margin-top: 2px;
+	}
+}
+
+.file-input-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 10px;
+
+	input[type="file"] {
+		display: none;
+	}
+
+	label {
+		background: var(--white-color);
+		border: 1px solid var(--border-gray-color);
+		color: var(--dark-gray-color);
+		padding: 9px 14px;
+		border-radius: 8px;
+		cursor: pointer;
+		transition: var(--trans-3);
+		user-select: none;
+
+		&:hover {
+			border-color: var(--main-blue-color);
+			color: var(--main-blue-color);
+		}
+	}
+}
+
+/* Optional utility to style the remove button if not using btn classes */
+.file-input-container .remove-btn {
+	background: var(--light2-gray-color);
+	border: 1px solid var(--border-gray-color);
+	color: var(--dark2-gray-color);
+	padding: 9px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: var(--trans-3);
+
+	&:hover {
+		background: var(--light3-gray-color);
+	}
+}

@@ -17,7 +17,24 @@ type initialStateType = { userInfo: any | null, isAuth: boolean };
 // createdAt: string;
 // updatedAt: string;
 // gender: string;
-const initialState: initialStateType = { userInfo: null, isAuth: false };
+const userInfoInitial = {
+    id: "1111111",
+    name: "Ahmed Maher",
+    email: "ahmedmaher@gmail.com",
+    role: "student",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    country: "",
+    profilePicture: "",
+    status: "",
+    createdAt: "",
+    updatedAt: "",
+    gender: "",
+}
+const initialState: initialStateType = { userInfo: userInfoInitial, isAuth: false };
 
 const userInfoSlice = createSlice({
 	name: "userInfo",

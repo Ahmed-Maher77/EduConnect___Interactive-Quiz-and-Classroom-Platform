@@ -1,0 +1,55 @@
+.Navigation-Btns {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	button {
+		min-width: 130px;
+		@media (min-width: 768px) {
+			min-width: 140px;
+		}
+		width: fit-content;
+		font-size: 1rem;
+		padding: 12px 20px;
+		border-radius: 60px;
+		border: 2px solid var(--c-gray-d);
+		cursor: pointer;
+		transition: var(--trans-3);
+		&.prev-btn {
+			color: var(--fixed-white-color);
+			background-color: var(--dark2-gray-color);
+			&:hover {
+				background-color: var(--dark-gray-color);
+				border-color: var(--dark-gray-color);
+				color: var(--fixed-white-color);
+				& i {
+					transform: translateX(-5px);
+				}
+			}
+		}
+		&.next-btn {
+			border-color: var(--main-blue-color);
+			background-color: var(--main-blue-color);
+			color: var(--fixed-white-color);
+			&:hover {
+				background-color: var(--dark-blue-color);
+				border-color: var(--dark-blue-color);
+				color: var(--fixed-white-color);
+				& i {
+					transform: translateX(5px);
+				}
+			}
+		}
+		&.prev-btn, 
+		&.next-btn {
+			& i {
+				transition: var(--trans-3);
+			}
+		}
+		&[disabled] {
+			opacity: 0.7;
+			cursor: not-allowed;
+			background-color: var(--dark2-gray-color);
+			color: var(--fixed-white-color);
+		}
+	}
+}

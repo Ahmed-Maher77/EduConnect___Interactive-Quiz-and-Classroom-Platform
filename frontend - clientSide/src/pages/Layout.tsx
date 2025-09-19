@@ -14,12 +14,12 @@ const Layout = () => {
 	const definedRoutes = [
 		"/",
 		"/about",
-		"/doctors",
-		"/appointments",
 		"/login",
 		"/create-account",
 		"/forgot-password",
 		"/contact",
+		"/complain",
+		"/dashboard",
 	];
 	const showNavbar = definedRoutes.includes(location.pathname);
 

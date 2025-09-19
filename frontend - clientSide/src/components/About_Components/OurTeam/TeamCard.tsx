@@ -1,4 +1,5 @@
 import type { TeamMember } from "../../../common/Types/Interfaces";
+import ImageOverlayLink from "../../ImageOverlayLink/ImageOverlayLink";
 import "./TeamCard.scss";
 
 interface TeamCardProps {
@@ -23,10 +24,7 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
 							: {}
 					}
 				/>
-				<div className="overlay absolute top-0 left-0 w-0 group-hover:w-full h-full bg-black/50 transition-all duration-300 overflow-hidden">
-				<TeamCardSocialLink className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2" />
-
-				</div>
+				<ImageOverlayLink href="https://ahmedmaher-portfolio.vercel.app/" />
 			</div>
 			<div className="team-card-content">
 				<h3 className="team-card-name">{member.name}</h3>
@@ -37,16 +35,22 @@ const TeamCard = ({ member, index }: TeamCardProps) => {
 	);
 };
 
-
 const TeamCardSocialLink = ({ className }: { className?: string }) => {
 	return (
 		<div className="team-card-social-links">
-			<a href="https://ahmedmaher-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className={className}>
+			<a
+				href="https://ahmedmaher-portfolio.vercel.app/"
+				target="_blank"
+				rel="noopener noreferrer"
+				className={className}
+			>
 				<i className="fa-solid fa-arrow-up-right-from-square text-2xl main-color trans-3"></i>
 			</a>
 		</div>
 	);
 };
+
+
 
 
 export default TeamCard;

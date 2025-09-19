@@ -27,13 +27,6 @@ const ScrollToTop = () => {
 
 		// Trigger scroll animation on route change OR when role is removed
 		if (isDifferentRoute || roleRemoved) {
-			console.log("ScrollToTop triggered:", {
-				isDifferentRoute,
-				roleRemoved,
-				prevLocation,
-				currentLocation,
-			});
-
 			setIsScrolling(true);
 
 			// Scroll to top with smooth animation

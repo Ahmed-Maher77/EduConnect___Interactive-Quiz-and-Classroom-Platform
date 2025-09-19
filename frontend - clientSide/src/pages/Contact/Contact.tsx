@@ -23,8 +23,8 @@ const Contact = () => {
 				{/* Location Section (Google Maps) */}
 				<section className="location-section py-[60px]">
 					<SectionHeading
-						title="Our Location"
-						subtitle="We're located in Cairo, Egypt."
+						title="Find Us Here"
+						subtitle="We're located in Egypt. Feel free to visit us anytime."
 						classNameTitle="page-title"
 					/>
 
